@@ -25,36 +25,96 @@
       }
 
       .zonas-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .zona {
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    border: 1px solid #ccc; /* Esto es solo para visualizar los bordes de cada zona */
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .zona img {
+    width: 100%; /* Esto hará que la imagen ocupe todo el ancho del div "zona" */
+    height: auto; /* Esto mantendrá la proporción de la imagen */
+  }
+  .zona h2 {
+    margin: 10px;
+  }
+  .zona p {
+    margin: 10px;
+  }
+  .zona button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+  }
+  .zona button:hover {
+    background-color: #218838;
+  }
+
+
+      #regresar {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
       }
 
-      .zona {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-        padding: 20px;
-        width: calc(33.33% - 20px);
+      #regresar:active {
+        background-color: #ccc;
       }
 
-      .zona img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .zona h2 {
-        font-size: 20px;
-        margin: 10px 0;
-      }
-
-      .zona p {
-        font-size: 14px;
+      a-scene {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
     </style>
+    <script>
+      function mostrarInformacion(zona) {
+        var scene = document.querySelector("a-scene");
+        var box = scene.querySelector("a-box");
+        var sphere = scene.querySelector("a-sphere");
+        var cylinder = scene.querySelector("a-cylinder");
+
+        if (zona === 1) {
+          box.setAttribute("color", "#4CC3D9");
+          sphere.setAttribute("color", "#EF2D5E");
+          cylinder.setAttribute("color", "#FFC65D");
+        } else if (zona === 2) {
+          box.setAttribute("color", "#FF5733");
+          sphere.setAttribute("color", "#C70039");
+          cylinder.setAttribute("color", "#900C3F");
+        } else if (zona === 3) {
+          box.setAttribute("color", "#DAF7A6");
+          sphere.setAttribute("color", "#FFC300");
+          cylinder.setAttribute("color", "#FF5733");
+        }
+
+        scene.style.display = "block";
+        document.querySelector("#regresar").style.display = "block";
+      }
+
+      function regresar() {
+        var scene = document.querySelector("a-scene");
+        scene.style.display = "none";
+        document.querySelector("#regresar").style.display = "none";
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -62,61 +122,90 @@
     </header>
     <div class="zonas-container">
       <div class="zona">
-          <img src="imagen1.jpg" alt="Zona Arqueológica 1">
-          <h2>Zona Arqueológica 1</h2>
-          <p>Descripción de la zona arqueológica 1.</p>
-          <button onclick="mostrarInformacion(1)">Información</button>
-      </div>
-      <div class="zona">
-          <img src="imagen2.jpg" alt="Zona Arqueológica 2">
-          <h2>Zona Arqueológica 2</h2>
-          <p>Descripción de la zona arqueológica 2.</p>
-          <button onclick="mostrarInformacion(2)">Información</button>
-      </div>
-      <div class="zona">
-          <img src="imagen3.jpg" alt="Zona Arqueológica 3">
-          <h2>Zona Arqueológica 3</h2>
-          <p>Descripción de la zona arqueológica 3.</p>
-          <button onclick="mostrarInformacion(3)">Información</button>
-      </div>
-      <!-- Puedes agregar más zonas arqueológicas aquí -->
-  </div>
-  
-
-  <div class="zonas-container">
-    <div class="zona">
-        <img src="imagen1.jpg" alt="Zona Arqueológica 1">
-        <h2>Zona Arqueológica 1</h2>
+        <img src="imagen1.jpg" alt="Zona Arqueológica 1" />
+        <h2>Chichén Itzá</h2>
         <p>Descripción de la zona arqueológica 1.</p>
         <button onclick="mostrarInformacion(1)">Información</button>
-    </div>
-    <div class="zona">
-        <img src="imagen2.jpg" alt="Zona Arqueológica 2">
-        <h2>Zona Arqueológica 2</h2>
+      </div>
+      <div class="zona">
+        <img src="imagen2.jpg" alt="Zona Arqueológica 2" />
+        <h2>Uxmal</h2>
         <p>Descripción de la zona arqueológica 2.</p>
         <button onclick="mostrarInformacion(2)">Información</button>
-    </div>
-    <div class="zona">
-        <img src="imagen3.jpg" alt="Zona Arqueológica 3">
-        <h2>Zona Arqueológica 3</h2>
+      </div>
+      <div class="zona">
+        <img src="imagen3.jpg" alt="Zona Arqueológica 3" />
+        <h2>Aké</h2>
         <p>Descripción de la zona arqueológica 3.</p>
         <button onclick="mostrarInformacion(3)">Información</button>
+      </div>
+      <!-- Puedes agregar más zonas arqueológicas aquí -->
     </div>
-    <!-- Puedes agregar más zonas arqueológicas aquí -->
-</div>
 
-<div>
-  <!-- <a-scene>
-    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-    <a-sky color="#ECECEC"></a-sky>
-  </a-scene> -->
-
-</div>
-   
-    
-    
+    <div class="zonas-container">
+      <div class="zona">
+        <img src="imagen1.jpg" alt="Zona Arqueológica 1" />
+        <h2>Chacmultún</h2>
+        <p>Descripción de la zona arqueológica 1.</p>
+        <button onclick="mostrarInformacion(1)">Información</button>
+      </div>
+      <div class="zona">
+        <img src="imagen2.jpg" alt="Zona Arqueológica 2" />
+        <h2>Dzibilchaltún</h2>
+        <p>Descripción de la zona arqueológica 2.</p>
+        <button onclick="mostrarInformacion(2)">Información</button>
+      </div>
+      <div class="zona">
+        <img src="imagen3.jpg" alt="Zona Arqueológica 3" />
+        <h2>Kabáh</h2>
+        <p>Descripción de la zona arqueológica 3.</p>
+        <button onclick="mostrarInformacion(3)">Información</button>
+      </div>
+      <!-- Puedes agregar más zonas arqueológicas aquí -->
+    </div>
+    <div class="zonas-container">
+      <div class="zona">
+        <img src="imagen1.jpg" alt="Zona Arqueológica 1" />
+        <h2>Ek Balam</h2>
+        <p>Descripción de la zona arqueológica 1.</p>
+        <button onclick="mostrarInformacion(1)">Información</button>
+      </div>
+      <div class="zona">
+        <img src="imagen2.jpg" alt="Zona Arqueológica 2" />
+        <h2>Labná</h2>
+        <p>Descripción de la zona arqueológica 2.</p>
+        <button onclick="mostrarInformacion(2)">Información</button>
+      </div>
+      <div class="zona">
+        <img src="imagen3.jpg" alt="Zona Arqueológica 3" />
+        <h2>Mayapán</h2>
+        <p>Descripción de la zona arqueológica 3.</p>
+        <button onclick="mostrarInformacion(3)">Información</button>
+      </div>
+      <!-- Puedes agregar más zonas arqueológicas aquí -->
+    </div>
+    <div>
+      <a-scene style="display: none">
+        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+        <a-cylinder
+          position="1 0.75 -3"
+          radius="0.5"
+          height="1.5"
+          color="#FFC65D"
+        ></a-cylinder>
+        <a-plane
+          position="0 0 -4"
+          rotation="-90 0 0"
+          width="4"
+          height="4"
+          color="#7BC8A4"
+        ></a-plane>
+        <a-sky color="#ECECEC"></a-sky>
+      </a-scene>
+    </div>
+    <button id="regresar" style="display: none" onclick="regresar()">
+      Regresar
+    </button>
   </body>
 </html>
