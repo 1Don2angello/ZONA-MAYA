@@ -1,96 +1,111 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Zonas Arqueológicas de Yucatán</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      .zonas-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .zona {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        padding: 20px;
+        width: calc(33.33% - 20px);
+      }
+
+      .zona img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .zona h2 {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      .zona p {
+        font-size: 14px;
+      }
+    </style>
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
-    <div>
-        <h2><NAME>'s Portfolio Page</h2>
-    </div>
-    <div>
-      <p>
-        Yucatán tiene un legado histórico como pocos territorios en el mundo. En
-        sus inmediaciones se yerguen majestuosos centros ceremoniales, ciudades
-        capitales y bellos edificios de piedra labrada y arquitectura perfecta.
-      </p>
-
-      <p>
-        Chichén Itzá, Uxmal, Ek Balam, Dzibilchaltún y Mayapán, entre muchas
-        otras, son la herencia de una de las más grandes civilizaciones del
-        mundo. Desarrollados en diferentes épocas, cada uno fue considerado
-        tanto complejos habitacionales como centros ceremoniales.
-      </p>
-      <p>
-        Puuc, que quiere decir "serranía", es el nombre con el que se conoce a
-        una serie de cerros de escasa altura con una zona cultural y estilo muy
-        singular, y también es el nombre que posteriormente recibió el estilo
-        arquitectónico que tienen los sitios de esa región.
-      </p>
-
-      <p>
-        Algunos elementos característicos del decorado Puuc incluyen las
-        pirámides rematadas por cresterías; las pequeñas y falsas columnas
-        encajadas en las fachadas, y las figuraciones de chozas mayas
-        estilizadas. También son muy utilizados los rombos y las grecas, a los
-        que se agregan algunos elementos figurativos como las serpientes y los
-        mascarones de Chaac, el dios de la lluvia. Ese tipo de decorado está
-        constituido por numerosísimas piezas de piedra, talladas previamente y
-        luego ensambladas a manera de mosaicos, lo que produce un soberbio
-        efecto decorativo.
-      </p>
-      <p>
-        Existen en esta zona varias cisternas o chultunes que servían para
-        recoger agua de las lluvias, ya que en esta zona no existían los
-        cenotes, y no había otra fuente de abastecimiento del indispensable
-        líquido; es por esto que en la zona Puuc las representaciones del dios
-        Chaac son tantas y tenían tanta importancia, debido a que la población
-        maya le rendía culto para pedirle lluvias suficientes. En esta zona se
-        encuentran las zonas arqueológicas de Uxmal, Chacmultún, Kabáh, Labná,
-        Oxkintok, Sayil y Xlapak.
-      </p>
-    </div>
-
-    <div>
-      <div class="imagenes">
-        <div class="img1">NAME</div>
-        <div class="img2">NAME</div>
-        <div class="img3">NAME</div>
-        <br />
-        <div class="img1">NAME</div>
-        <div class="img2">NAME</div>
-        <div class="img3">NAME</div>
-        <br />
-        <div class="img1">NAME</div>
-        <div class="img2">NAME</div>
-        <div class="img3">NAME</div>
-        <br />
-        <div class="img1">NAME</div>
-        <div class="img2">NAME</div>
-        <div class="img3">NAME</div>
-        <br />
-        <div class="img1">NAME</div>
-        <div class="img2">NAME</div>
+    <header>
+      <h1>Catálogo de Zonas Arqueológicas de Yucatán</h1>
+    </header>
+    <div class="zonas-container">
+      <div class="zona">
+          <img src="imagen1.jpg" alt="Zona Arqueológica 1">
+          <h2>Zona Arqueológica 1</h2>
+          <p>Descripción de la zona arqueológica 1.</p>
+          <button onclick="mostrarInformacion(1)">Información</button>
       </div>
-    </div>
+      <div class="zona">
+          <img src="imagen2.jpg" alt="Zona Arqueológica 2">
+          <h2>Zona Arqueológica 2</h2>
+          <p>Descripción de la zona arqueológica 2.</p>
+          <button onclick="mostrarInformacion(2)">Información</button>
+      </div>
+      <div class="zona">
+          <img src="imagen3.jpg" alt="Zona Arqueológica 3">
+          <h2>Zona Arqueológica 3</h2>
+          <p>Descripción de la zona arqueológica 3.</p>
+          <button onclick="mostrarInformacion(3)">Información</button>
+      </div>
+      <!-- Puedes agregar más zonas arqueológicas aquí -->
+  </div>
+  
 
-    <footer>
-        
-    </footer>
-    <script src="" async defer></script>
+  <div class="zonas-container">
+    <div class="zona">
+        <img src="imagen1.jpg" alt="Zona Arqueológica 1">
+        <h2>Zona Arqueológica 1</h2>
+        <p>Descripción de la zona arqueológica 1.</p>
+        <button onclick="mostrarInformacion(1)">Información</button>
+    </div>
+    <div class="zona">
+        <img src="imagen2.jpg" alt="Zona Arqueológica 2">
+        <h2>Zona Arqueológica 2</h2>
+        <p>Descripción de la zona arqueológica 2.</p>
+        <button onclick="mostrarInformacion(2)">Información</button>
+    </div>
+    <div class="zona">
+        <img src="imagen3.jpg" alt="Zona Arqueológica 3">
+        <h2>Zona Arqueológica 3</h2>
+        <p>Descripción de la zona arqueológica 3.</p>
+        <button onclick="mostrarInformacion(3)">Información</button>
+    </div>
+    <!-- Puedes agregar más zonas arqueológicas aquí -->
+</div>
+
+      <!-- Puedes agregar más zonas arqueológicas aquí -->
+    </div>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
   </body>
 </html>
