@@ -6,24 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Imágenes</title>
     <link rel="stylesheet" href="./src/diseno.css">
+    <script src="./src/info.js"></script>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 </head>
 
 <body>
-
-    
-    <style>
-
-
-    </style>
 <header>
     <h1>Catálogo de Zonas Arqueológicas de Yucatán</h1>
   </header>
+
+<!-- <div class="container">
+   
+    <div class="image-item">
+        <img src="./src/img/tn_ake.jpg" alt="Descripción de imagen 1">
+        <div class="image-content">
+            <div class="image-name">AKE</div>
+            <button onclick="mostrarInformacion()">Información</button>
+
+           
+        </div>
+    </div>
+</div>
+ 
+            <div class="modal" id="infoModal">
+                <span class="close-btn" onclick="cerrarModal()">&times;</span>
+                <div class="modal-content">
+                    <a-scene>
+                        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+                        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+                        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+                        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+                        <a-sky color="#ECECEC"></a-sky>
+                    </a-scene>
+                    <button onclick="cerrarModal()" style="position: absolute; bottom: 10px; right: 10px;">Salir</button>
+                </div>
+            </div> -->
+
+            
+    <div class="modal" id="infoModal"></div>
+
     <div class="container">
         <div class="image-item">
             <img src="./src/img/tn_ake.jpg" alt="Descripción de imagen 1">
             <div class="image-content">
                 <div class="image-name">AKE</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
+                <button onclick="mostrarInformacion('ake')">Información</button>
             </div>
         </div>
 
@@ -31,35 +58,35 @@
             <img src="./src/img/tn_chacmultun.jpg" alt="Descripción de imagen 1">
             <div class="image-content">
                 <div class="image-name">Chacmultún</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
+                <button onclick="mostrarInformacion('chacmultun')">Información</button>
             </div>
         </div>
         <div class="image-item">
             <img src="./src/img/tn_chichen_itza.jpg" alt="Descripción de imagen 1">
             <div class="image-content">
                 <div class="image-name">Chichen itza</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
+                <button onclick="mostrarInformacion('chichen')">Información</button>
             </div>
         </div>
         <div class="image-item">
             <img src="./src/img/tn_dzibilchaltun.jpg" alt="Descripción de imagen 1">
             <div class="image-content">
                 <div class="image-name">Dzibilchaltún</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
+                <button onclick="mostrarInformacion('dzibilchaltun')">Información</button>
             </div>
         </div>
         <div class="image-item">
             <img src="./src/img/tn_ekbalam.jpg" alt="Descripción de imagen 1">
             <div class="image-content">
                 <div class="image-name">Ekbalam</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
+                <button onclick="mostrarInformacion('ekbalam')">Información</button>
             </div>
         </div>
         <div class="image-item">
             <img src="./src/img/tn_kabah.jpg" alt="Descripción de imagen 1">
             <div class="image-content">
                 <div class="image-name">Kabah</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
+                <button onclick="mostrarInformacion('kabah')">Información</button>
             </div>
         </div>
         <div class="image-item">
@@ -114,7 +141,16 @@
         <!-- ... [Repite para todas tus imágenes] ... -->
     </div>
 
-
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2023 Mi Compañía. Todos los derechos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="#">Términos de Servicio</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </footer>
   
     <script src="./js.js"></script> <!-- Asegúrate de que esta ruta es correcta -->
 </body>
