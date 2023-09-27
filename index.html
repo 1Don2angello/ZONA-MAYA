@@ -1,158 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo de Imágenes</title>
-    <link rel="stylesheet" href="./src/diseno.css">
+    <link rel="stylesheet" href="./src/diseno.css" />
     <script src="./src/info.js"></script>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-</head>
+  </head>
 
-<body>
-<header>
-    <h1>Catálogo de Zonas Arqueológicas de Yucatán</h1>
-  </header>
+  <body>
+    <header>
+      <h1>Catálogo de Zonas Arqueológicas de Yucatán</h1>
+    </header>
 
-<!-- <div class="container">
-   
-    <div class="image-item">
-        <img src="./src/img/tn_ake.jpg" alt="Descripción de imagen 1">
-        <div class="image-content">
-            <div class="image-name">AKE</div>
-            <button onclick="mostrarInformacion()">Información</button>
-
-           
-        </div>
-    </div>
-</div>
- 
-            <div class="modal" id="infoModal">
-                <span class="close-btn" onclick="cerrarModal()">&times;</span>
-                <div class="modal-content">
-                    <a-scene>
-                        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-                        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-                        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-                        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-                        <a-sky color="#ECECEC"></a-sky>
-                    </a-scene>
-                    <button onclick="cerrarModal()" style="position: absolute; bottom: 10px; right: 10px;">Salir</button>
-                </div>
-            </div> -->
-
-            
     <div class="modal" id="infoModal"></div>
 
-    <div class="container">
-        <div class="image-item">
-            <img src="./src/img/tn_ake.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">AKE</div>
-                <button onclick="mostrarInformacion('ake')">Información</button>
-            </div>
+    <!-- <div class="container">
+      <div class="image-item">
+        <img src="./src/img/tn_ake.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">AKE</div>
+          <button onclick="mostrarInformacion('ake')">Información</button>
         </div>
+      </div>
 
-        <div class="image-item">
-            <img src="./src/img/tn_chacmultun.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Chacmultún</div>
-                <button onclick="mostrarInformacion('chacmultun')">Información</button>
-            </div>
+      <div class="image-item">
+        <img src="./src/img/tn_chacmultun.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Chacmultún</div>
+          <button onclick="mostrarInformacion('chacmultun')">
+            Información
+          </button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_chichen_itza.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Chichen itza</div>
-                <button onclick="mostrarInformacion('chichen')">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img
+          src="./src/img/tn_chichen_itza.jpg"
+          alt="Descripción de imagen 1"
+        />
+        <div class="image-content">
+          <div class="image-name">Chichen itza</div>
+          <button onclick="mostrarInformacion('chichen')">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_dzibilchaltun.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Dzibilchaltún</div>
-                <button onclick="mostrarInformacion('dzibilchaltun')">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img
+          src="./src/img/tn_dzibilchaltun.jpg"
+          alt="Descripción de imagen 1"
+        />
+        <div class="image-content">
+          <div class="image-name">Dzibilchaltún</div>
+          <button onclick="mostrarInformacion('dzibilchaltun')">
+            Información
+          </button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_ekbalam.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Ekbalam</div>
-                <button onclick="mostrarInformacion('ekbalam')">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_ekbalam.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Ekbalam</div>
+          <button onclick="mostrarInformacion('ekbalam')">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_kabah.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Kabah</div>
-                <button onclick="mostrarInformacion('kabah')">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_kabah.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Kabah</div>
+          <button onclick="mostrarInformacion('kabah')">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_labna.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Labna</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_labna.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Labna</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_mayapan.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Mayapan</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_mayapan.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Mayapan</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_oxkintok.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Oxkintok</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_oxkintok.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Oxkintok</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_sayil.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Sayil</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_sayil.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Sayil</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_uxmal.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Uxmal</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_uxmal.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Uxmal</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_xcambo.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Xcambo</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_xcambo.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Xcambo</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <div class="image-item">
-            <img src="./src/img/tn_xlapak.jpg" alt="Descripción de imagen 1">
-            <div class="image-content">
-                <div class="image-name">Xlapak</div>
-                <button onclick="mostrarInformacion(1)">Información</button>
-            </div>
+      </div>
+      <div class="image-item">
+        <img src="./src/img/tn_xlapak.jpg" alt="Descripción de imagen 1" />
+        <div class="image-content">
+          <div class="image-name">Xlapak</div>
+          <button onclick="mostrarInformacion(1)">Información</button>
         </div>
-        <!-- ... [Repite para todas tus imágenes] ... -->
-    </div>
+      </div>
+    </div> -->
+    <section class="hero-section">
+        <div class="card-grid">
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_ake.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">AKE</h3>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_chacmultun.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Chacmultún</h3>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_chichen_itza.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Chichen itza</h3>
+            </div>
+          </li>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_dzibilchaltun.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Dzibilchaltún</h3>
+            </div>
+          </a>
+        <div>
+      </section>
 
+      <section class="hero-section">
+        <div class="card-grid">
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_ekbalam.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Ekbalam</h3>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_kabah.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Kabah</h3>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_labna.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Labna</h3>
+            </div>
+          </li>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_mayapan.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Mayapan</h3>
+            </div>
+          </a>
+        <div>
+      </section>
+      <section class="hero-section">
+        <div class="card-grid">
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_oxkintok.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Oxkintok</h3>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_sayil.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Sayil</h3>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_uxmal.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Uxmal</h3>
+            </div>
+          </li>
+          <a class="card" href="#">
+            <div class="card__background" style="background-image: url(../src/img/tn_xcambo.jpg)"></div>
+            <div class="card__content">
+              <p class="card__category">Informacion</p>
+              <h3 class="card__heading">Xcambo</h3>
+            </div>
+          </a>
+        <div>
+      </section>
     <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2023 Mi Compañía. Todos los derechos reservados.</p>
-            <ul class="footer-links">
-                <li><a href="#">Términos de Servicio</a></li>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </div>
+      <div class="footer-content">
+        <p>&copy; 2023 Mi Compañía. Todos los derechos reservados.</p>
+        <ul class="footer-links">
+          <li><a href="#">Términos de Servicio</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
     </footer>
-  
-    <script src="./js.js"></script> <!-- Asegúrate de que esta ruta es correcta -->
-</body>
 
+    <script src="./js.js"></script>
+    <!-- Asegúrate de que esta ruta es correcta -->
+  </body>
 </html>

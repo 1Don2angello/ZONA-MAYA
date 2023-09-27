@@ -1,95 +1,213 @@
         /* Estilos previos... */
 /* Estilos previos... */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Establece la altura del body al 100% de la ventana del navegador */
-    overflow-y: scroll;
-
-    width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: rgba(255, 255, 255, 0.787);
-
+  font-family: 'Arial', sans-serif;
+  background-color: #ff0505;
+  margin: 0px;
+  padding: 0px; /* Corregido el valor del padding */
+  height: 100%;
+  overflow-y: scroll;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.787); /* Esto sobreescribe el background-color anterior. Decide cuál deseas mantener */
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    padding: 16px;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrar el contenedor */
+:root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
 }
 
-.image-item {
-    background-color: #fff;
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.image-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(255, 0, 0, 0);
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
 
-.image-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px 5px 0 0; /* Redondear solo la parte superior */
+/* Estilos para el header */
+header {
+  background-color: #00ab84; /* Color de fondo verde */
+  padding: 20px; /* Espaciado interno para que el contenido no esté pegado al borde */
+  text-align: center; /* Alinear el texto al centro */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Una sutil sombra para darle profundidad */
 }
 
-.image-content {
-    max-height: 150px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: rgb(2, 117, 64);
-    border-radius: 0 0 5px 5px; /* Redondear solo la parte inferior */
+h1 {
+  font-family: 'Arial', sans-serif; /* Usamos Arial, pero puedes cambiarlo a otro tipo de letra si prefieres */
+  color: #ffffff; /* Color de texto blanco para que contraste con el fondo verde */
+  font-size: 2.5rem; /* Tamaño de la fuente más grande */
+  margin: 0; /* Remover márgenes predeterminados */
+  font-weight: bold; /* Letra en negrita */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Una sutil sombra de texto para mejorar la legibilidad */
 }
 
-.image-name {
-    color: white;
-    font-weight: bold;
-    margin-bottom: 5px;
-    letter-spacing: 0.5px;
+/* Si deseas añadir una animación suave al pasar el mouse sobre el título */
+h1:hover {
+  color: #eeeeee; /* Cambiamos ligeramente el color al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  transition: transform 0.3s ease, color 0.3s ease; /* Efecto suave de transición */
 }
 
-.image-description {
-    color: white;
-    font-size: 0.85rem;
-    line-height: 1.4;
+
+.hero-section {
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  background-color: #ffffff; /* Color de fondo blanco */
+  padding: var(--spacing-xxl) var(--spacing-l);
+  min-height: 100vh; /* Ocupa al menos el alto completo de la ventana del navegador */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle un poco de profundidad */
+  transition: background-color 0.3s ease; /* Transición suave en cambios de color de fondo */
 }
-.image-item button {
-    margin: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #28a745;
-    color: #fff;
-    cursor: pointer;
+
+/* Puedes añadir una interacción suave al pasar el mouse por encima */
+.hero-section:hover {
+  background-color: #f5f5f5; /* Cambia ligeramente el color de fondo al pasar el mouse */
+}
+
+/* Si tienes texto o cualquier contenido dentro de .hero-section, es bueno darle estilo también */
+.hero-section h1,
+.hero-section p {
+  font-family: 'Arial', sans-serif; /* Ajusta según tu preferencia */
+  text-align: center;
+  color: #333333; /* Color de texto oscuro para contrastar con el fondo blanco */
+  transition: color 0.3s ease; /* Transición suave en cambios de color de texto */
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-l); /* Espacio entre el título y cualquier otro contenido */
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1rem;
+}
+
+/* Cambia el color del texto cuando pasas el mouse por encima del .hero-section */
+.hero-section:hover h1,
+.hero-section:hover p {
+  color: #ffffff;
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
   }
-  .image-item button:hover {
-    background-color: #218838;
-  }
-
-
-
-
-.main-container {
-    flex: 1; /* Toma todo el espacio disponible, empujando el footer hacia abajo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card {
+  list-style: none;
+  position: relative;
+  overflow: hidden; /* Ocultar cualquier contenido o imagen que se salga del contorno de la tarjeta */
+  border-radius: var(--spacing-l); /* Agrega curvatura para coincidir con el fondo de la tarjeta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: box-shadow 200ms linear; /* Transición de la sombra */
+}
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+/* Espaciado entre tarjetas */
+.card-grid > * {
+  margin: var(--spacing-s);
+}
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0); /* Corregido */
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content {
+  /* Mejora la legibilidad del texto añadiendo un fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; 
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+.card__category, .card__heading {
+  text-align: center; /* Centra el texto */
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+  margin-top: var(--spacing-s); /* Agrega un espacio entre el título y la categoría */
+}
+/* aca va el foter */
 .footer {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #0b3856;
+    color: #ffffff;
     padding: 20px 0;
 }
 
@@ -118,41 +236,11 @@ body {
 }
 
 .footer-links a {
-    text-decoration: none;
-    color: #000000;
-    transition: color 0.3s ease-in-out;
+  text-decoration: none;
+  color: #ffffff; /* Cambiado a blanco para mejor contraste */
+  transition: color 0.3s ease-in-out;
 }
 
 .footer-links a:hover {
-    color: #000000;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.9);
-}
-.modal-content {
-    margin: auto;
-    width: 80%;
-    height: 80%;
-}
-.close-btn {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    color: white;
-    cursor: pointer;
-}
-.close-btn {
-    cursor: pointer;
-    float: right;
-    font-size: 24px;
-    font-weight: bold;
+  color: #cccccc; /* Color más claro para el hover */
 }
